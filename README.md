@@ -18,4 +18,5 @@ Usage
 
 0. Configure `settings_local.py` exmpl: `cp nri/settings_local.py{_example,}`
 1. `fab build` for build site envirenment
-2. `fab run` for run test server
+2. `fab run` for run test server or `fab run:0.0.0.0:8080`
+3. `fab manage:shell`, `fab manage:'dbshell -h'`, etc...

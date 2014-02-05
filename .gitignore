@@ -1,0 +1,8 @@
+*.py[co]
+*.mo
+*~
+*.log
+*.sqlite3
+venv
+public/*
+*/settings_local.py

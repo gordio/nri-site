@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"follow_symlinks": true,
+			"file_exclude_patterns": ["*.sqlite3"],
+			"folder_exclude_patterns": ["venv"]
+		}
+	],
+	"settings":
+	{
+		"tab_size": 4,
+		"translate_tabs_to_spaces": false
+	},
+	"build_systems":
+	[
+		{
+			"name": "Rebuild project",
+			"shell_cmd": "fab build"
+		}
+	]
+}

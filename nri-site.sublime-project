@@ -34,6 +34,7 @@
 	[
 		{
 			"name": "Rebuild project",
+			"working_dir": "${project_path}",
 			"shell_cmd": "fab build"
 		}
 	]

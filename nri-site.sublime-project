@@ -2,10 +2,27 @@
 	"folders":
 	[
 		{
-			"path": ".",
-			"follow_symlinks": true,
-			"file_exclude_patterns": ["*.sqlite3"],
-			"folder_exclude_patterns": ["venv"]
+			"file_exclude_patterns":
+			[
+				"*.pyc"
+			],
+			"name": "Apps",
+			"path": "apps"
+		},
+		{
+			"file_exclude_patterns":
+			[
+				"*.pyc",
+				"*.sublime-work*",
+				"*.sqlite3"
+			],
+			"folder_exclude_patterns":
+			[
+				"apps",
+				"venv"
+			],
+			"name": "Project",
+			"path": "./"
 		}
 	],
 	"settings":

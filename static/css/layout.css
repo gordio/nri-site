@@ -2,34 +2,14 @@ body {
 	background: #ECEED9 url("../img/noise.png") top left;
 }
 
-/*.wrapper-center {
-	margin: 0 auto;
-}
-
-@media only screen and (max-width: 767px) {
-	.wrapper-center {
-		width: 618px;
-	}
-}
-@media only screen and (min-width: 768px) and (max-width: 999px) {
-	.wrapper-center {
-		width: 750px;
-	}
-}
-@media only screen and (min-width: 1000px) {
-	.wrapper-center {
-		width: 984px;
-	}
-}*/
-
 
 header {
-	padding: 1rem;
+	padding: 0.75rem;
 	background: #3A3A3A;
 }
 
 header .logo {
-	float: left;
+	/*float: left;*/
 	display: inline-block;
 	color: #FBC24E;
 	font-size: 2rem;
@@ -37,16 +17,17 @@ header .logo {
 }
 
 header nav {
-	text-align: right;
+	float: right;
+	margin-right: 0.25rem;
 }
 
 header nav a + a {
-	margin-left: 0.5rem;
+	margin-left: 0.75rem;
 }
 header nav a,
 header nav a:visited {
 	display: inline-block;
-	padding: 0.5rem 1rem;
+	padding: 0.45rem 0;
 	color: #DDD;
 	text-decoration: none;
 	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
@@ -69,10 +50,4 @@ header nav a.active {
 
 	border-radius: 0.125rem;
 	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-
-
-.contacts {
-	margin: 1rem;
 }

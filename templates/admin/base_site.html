@@ -1,0 +1,90 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Admin panel' %}{% endblock %}
+
+{% block branding %}
+	<h1 id="site-name"><a href="/">{% trans 'NRI' %}</a></h1>
+{% endblock %}
+
+{% block extrastyle %}
+	<style>
+		body {
+			font: 100% "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+			background: #555;
+		}
+
+		a:link,
+		a:visited {
+			/*color: #8B522E;*/
+		}
+
+		#header {
+			background-color: #403F3D;
+			border-bottom: 0.20rem solid #FBC24E;
+		}
+
+		#branding #site-name a {
+			padding: 0 0.25em;
+			color: #FBC24E;
+			font-size: 1.75em;
+			text-shadow: 0 2px 0 #000, 0 0 0.75rem #FC4;
+		}
+		#user-tools {
+			padding: 1.65em;
+			font-size: 0.75em;
+		}
+
+		#container {
+			margin: 0 auto;
+			margin-bottom: 1em;
+			width: 90%;
+			min-width: 52rem;
+			max-width: 90rem;
+			min-height: 30rem;
+			background: #FAFAFA;
+
+			border-radius: 0 0 0.25rem 0.25rem;
+			box-shadow: 0 0 0.5rem #000;
+		}
+
+		.breadcrumbs {
+			font-size: 0.8rem !important;
+		}
+		.breadcrumbs * {
+			font-size: inherit !important;
+		}
+
+		.module h2,
+		.module caption,
+		.inline-group h2 {
+			/*color: #334;*/
+
+		}
+
+		div.module table caption {
+			padding: 0.35em 0.5em;
+			text-shadow: 0 0 1px #FFF;
+			font-size: 1rem;
+
+			/*background: #E0DEE1;*/
+			background: linear-gradient(#F7F2F6, #E0DEE1);
+		}
+		a.section:link,
+		a.section:visited {
+			color: #333;
+		}
+
+		div.module h2 {
+			padding: 0.25em 0.5em;
+		}
+		div.module,
+		div.module table,
+		div.module table caption,
+		div.module h2 {
+			border-radius: 0.25rem 0.25rem 0 0;
+		}
+	</style>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

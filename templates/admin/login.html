@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+{% spaceless %}
+{% load i18n %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Authorization</title>
+	<link rel="shortcut icon" type="image/png" href="{{MEDIA_URL}}/admin.png">
+	{% compress css %}
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/reset.css" media="all" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/admin/login.css" media="all" charset="utf-8">
+	{% endcompress %}
+	<!--[if IE]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+{% if form.non_field_errors or form.this_is_the_login_form.errors %}
+{% for error in form.non_field_errors|add:form.this_is_the_login_form.errors %}
+<p class="errornote">{{ error }}</p>
+{% endfor %}
+{% endif %}
+
+<article>
+<form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+	<h2>Authorization</h2>
+	<div>
+		{% if not form.this_is_the_login_form.errors %}{{ form.username.errors }}{% endif %}
+		{#<label for="id_username">{% trans 'Username:' %}</label>#}
+		{{ form.username }}
+	</div>
+	<div>
+		{% if not form.this_is_the_login_form.errors %}{{ form.password.errors }}{% endif %}
+		{#<label for="id_password">{% trans 'Password:' %}</label>#}
+		{{ form.password }}
+		<input type="hidden" name="this_is_the_login_form" value="1">
+		<input type="hidden" name="next" value="{{ next }}">
+	</div>
+		{#<input style="float: right" type="submit" value="{% trans 'Log in' %}" />#}
+</form>
+</article>
+
+<script type="text/javascript">
+	function $id(a,b){a=a.match(/^(\W)?(.*)/);return(b||document)["getElement"+(a[1]?a[1]=="#"?"ById":"sByClassName":"sByTagName")](a[2])}
+	var f = $id('#login-form');
+	f.onkeypress = function(e) {if(event.keyCode == "13") {this.submit();}};
+	$id('#id_password').onblur = function(){f.submit()}
+	$id('#id_username').focus();
+</script>
+</body>
+</html>
+{# vim: set ft=htmldjango noet fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : #}
+{% endspaceless %}

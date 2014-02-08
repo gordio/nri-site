@@ -32,6 +32,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pipeline',
+    'easy_thumbnails',
+    'gallery',
 )
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
@@ -44,13 +46,30 @@ PIPELINE_CSS = {
           'css/reset.css',
           'css/layout.css'
         ),
-        'output_filename': 'css/main.css',
+        'output_filename': 'assets/main.css',
+        'extra_context': {
+            'media': 'screen,projection',
+        },
+    },
+    'gallery': {
+        'source_filenames': (
+          'css/gallery-photos.css',
+          'css/image-viewer.css'
+        ),
+        'output_filename': 'assets/gallery.css',
         'extra_context': {
             'media': 'screen,projection',
         },
     }
 }
-
+PIPELINE_JS = {
+    'gallery': {
+        'source_filenames': (
+          'js/image-viewer.js',
+        ),
+        'output_filename': 'assets/gallery.js',
+    }
+}
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',

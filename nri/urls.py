@@ -4,6 +4,7 @@ from gallery.views import GalleryListView
 
 
 urlpatterns = patterns('',
+    url(r'^$', GalleryListView.as_view(), name="gallery"),
     url(r'^admin/', include(admin.site.urls)),
 )
 

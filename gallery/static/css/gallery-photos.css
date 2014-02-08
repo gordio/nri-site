@@ -1,0 +1,84 @@
+/*
+ * Portfolio styles
+ * Author: Gordienko Oleg aka Gordio - me[at]gordio.pp.ua
+ */
+
+
+.portfolio-photos {
+	/*text-align: justify;*/
+	padding-bottom: 1em;
+	padding-right: 1em;
+}
+
+.portfolio-photos > a {
+	display: inline-block;
+	margin-left: 1em;
+	margin-top: 1em;
+	text-decoration: none;
+}
+
+.portfolio-photos .photo {
+	display: inline-block;
+	padding: 0.5em;
+	background: #EEE;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+
+	border-radius: 2px;
+	box-shadow: 0 1px 0.125em rgba(0, 0, 0, 0.25);
+/*	transition: 0.25s all ease-out;*/
+}
+
+.portfolio-photos .photo img {
+	padding: 0;
+	margin: 0;
+	/*width: 100%;*/
+	max-width: 100%;
+	border: 0;
+
+	border-radius: 0.125em;
+}
+
+.portfolio-photos .photo:hover {
+	border-color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-photos .photo h3 {
+	padding-top: 0.5em;
+	color: #000;
+	font: italic 1.25rem/1.25rem "Bad Script", "Ubuntu", cursive, serif;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+/* "Mobile" Devices */
+@media screen and (max-width: 33em) {
+	.portfolio-photos {
+		padding-bottom: 0.5em;
+		padding-right: 0.5em;
+	}
+	.portfolio-photos .photo {
+		width: 7.5em;
+		margin-left: 0.5em;
+		margin-top: 0.5em;
+		padding: 0.125em;
+	}
+	.portfolio-photos .photo h3 {
+		display: none;
+	}
+}
+/* Tablet Devices? */
+@media screen and (min-width: 33em) and (max-width: 48em) {
+	.portfolio-photos {
+		padding-bottom: 0.5em;
+		padding-right: 0.5em;
+	}
+	.portfolio-photos .photo {
+		width: 9.5em;
+		margin-left: 0.5em;
+		margin-top: 0.5em;
+		padding: 0.25em;
+	}
+	.portfolio-photos .photo h3 {
+		display: none;
+	}
+}

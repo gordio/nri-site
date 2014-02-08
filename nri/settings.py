@@ -36,6 +36,21 @@ INSTALLED_APPS = (
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
+PIPELINE_CSS_COMPRESSOR = 'nri.cssmin.CSSMinCompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+PIPELINE_CSS = {
+    'main': {
+        'source_filenames': (
+          'css/reset.css',
+          'css/layout.css'
+        ),
+        'output_filename': 'css/main.css',
+        'extra_context': {
+            'media': 'screen,projection',
+        },
+    }
+}
+
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
@@ -51,6 +66,9 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'nri.urls'
 
 WSGI_APPLICATION = 'nri.wsgi.application'
+
+
+TEMPLATE_DIRS = (BASE_DIR + '/templates/', )
 
 
 # Database
@@ -82,6 +100,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = BASE_DIR + '/public/'
+STATICFILES_DIRS = (BASE_DIR + '/static/', )
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 
 from nri.settings_local import *

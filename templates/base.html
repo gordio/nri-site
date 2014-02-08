@@ -1,0 +1,35 @@
+{% load i18n staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% trans "NRI Photographer" %}{% endblock title %}</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	{% block head %}
+	{% load compressed %}
+	{% compressed_css 'main' %}
+	{% endblock head %}
+</head>
+<body>
+	<header>
+		<a href="/">
+			<h1 class="logo">N.R.I.</h1>
+		</a>
+		<nav>
+			{% if user.is_staff %}
+			{# IMPORTANT: hardcoded #}
+			<a href="/admin/">Admin Panel</a>
+			{% endif %}
+		</nav>
+	</header>
+	<section id="content">
+		{% block content %}
+		{% endblock content %}
+	</section>
+</body>
+</html>

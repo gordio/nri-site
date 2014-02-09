@@ -76,6 +76,12 @@ PIPELINE_JS = {
     }
 }
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'gallery_thumb': {'size': (210, 210), 'crop': "smart"},
+    },
+}
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',

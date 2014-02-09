@@ -25,7 +25,7 @@
     {% for p in photos %}
       <a href="{{ p.get_absolute_url }}" target="_blank" title="{{ p.title }}">
         <div class="photo">
-          <img src="{% thumbnail p.image '210x210' crop='smart' %}" alt="{{ p.title }}" title="{{ p.title }}">
+          <img src="{{ p.image|thumbnail_url:'gallery_thumb' }}" alt="{{ p.title }}">
           <h3>{{ p.title }}</h3>
         </div>
       </a>

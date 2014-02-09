@@ -15,12 +15,9 @@ class Photo(models.Model):
     )
 
     def image_thumb(self):
-        thumbnailer = get_thumbnailer(self.image)
-        img = thumbnailer.get_thumbnail({
-            'crop': "smart",
-            'size': (210, 210),
-        })
-        return u'<img width="70px" height="70px" src="%s">' % img.url
+        img = get_thumbnailer(self.image)['gallery_thumb']
+        return '<img width="{0}px" height="{1}px" src="{2}">'.format(
+            img.width/2, img.height/2, img.url)
 
     image_thumb.short_description = 'Thumbnail'
     image_thumb.allow_tags = True

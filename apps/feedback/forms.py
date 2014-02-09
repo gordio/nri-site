@@ -13,7 +13,7 @@ class ContactsForm(forms.ModelForm):
 
     def send_mail(self):
         return django_send_mail(
-            _("{0} This message sended from you site.".format(settings.EMAIL_PREFIX)),
+            _("{0} New message from site".format(settings.EMAIL_PREFIX)),
             self.cleaned_data['content'],
             self.cleaned_data['email'],
             [manager[1] for manager in settings.MANAGERS]

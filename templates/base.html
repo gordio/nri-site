@@ -23,8 +23,7 @@
     <nav>
       {% if user.is_staff or user.is_superuser %}
       {% if user.is_active %}
-      {# IMPORTANT: hardcoded #}
-      <a href="/admin/">Admin Panel</a>
+      <a href="{% url 'admin:index' %}">Admin Panel</a>
       {% endif %}
       {% endif %}
       <a href="{% url 'contacts' %}">{% trans "Contacts" %}</a>

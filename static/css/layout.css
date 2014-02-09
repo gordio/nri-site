@@ -1,5 +1,7 @@
 body {
-	background: #ECEED9 url("../img/noise.png") top left;
+	font: 1.00em "Droid Sans", "Tahoma", "Geneva", sans-serif;
+	font-size: 87%;
+	background: #ECEED9;
 }
 
 
@@ -12,7 +14,7 @@ header .logo {
 	/*float: left;*/
 	display: inline-block;
 	color: #FBC24E;
-	font-size: 2rem;
+	font-size: 2em;
 	text-shadow: 0 2px 0 #000, 0 0 0.75rem #FC4;
 }
 
@@ -27,27 +29,15 @@ header nav a + a {
 header nav a,
 header nav a:visited {
 	display: inline-block;
-	padding: 0.45rem 0;
+	padding: 0.45rem 0 0;
 	color: #DDD;
-	text-decoration: none;
-	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 	border: 1px solid transparent;
+	text-decoration: none;
+	text-shadow: 0 1px 0.125em #000;
 
-	transition: 0.25s color ease-out;
+	transition: 0.125s color ease-out;
 }
 
 header nav a:hover {
 	color: #FBC24E;
-}
-
-header nav a.active {
-	padding: 0.5rem 1rem;
-	color: #FBC24E;
-	background: rgba(0, 0, 0, 0.2);
-	border-color: rgba(0, 0, 0, 0.4);
-	border-bottom-color: rgba(255, 255, 255, 0.14);
-	border-right-color: rgba(255, 255, 255, 0.12);
-
-	border-radius: 0.125rem;
-	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3);
 }

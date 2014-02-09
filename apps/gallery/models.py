@@ -10,7 +10,7 @@ class Photo(models.Model):
     title = models.CharField(_("Title"), max_length=22)
     image = ThumbnailerImageField(_("Image file"), upload_to="portfolio/",
         resize_source=dict(
-            size=(1280, 1024), crop=False, quality=98, sharpen=True
+            size=(1280, 1024), crop=False, quality=92, sharpen=True
         )
     )
 

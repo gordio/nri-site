@@ -21,10 +21,13 @@
 			<h1 class="logo">N.R.I.</h1>
 		</a>
 		<nav>
-			{% if user.is_staff %}
+			{% if user.is_staff or user.is_superuser %}
+			{% if user.is_active %}
 			{# IMPORTANT: hardcoded #}
 			<a href="/admin/">Admin Panel</a>
 			{% endif %}
+			{% endif %}
+			<a href="{% url 'contacts' %}">{% trans "Contacts" %}</a>
 		</nav>
 	</header>
 	<section id="content">

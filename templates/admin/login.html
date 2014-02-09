@@ -3,120 +3,120 @@
 {% load i18n %}
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>{% trans "Authorization" %} — {% trans "Admin panel" %}</title>
-	<style>
-		body {
-			font: 100% "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-			background: #555;
-		}
-		
-		.auth-box {
-			margin: 2rem auto 0;
-			padding: 1rem;
-			width: 14rem;
-			background: #FAFAFA;
+  <meta charset="UTF-8">
+  <title>{% trans "Authorization" %} — {% trans "Admin panel" %}</title>
+  <style>
+    body {
+      font: 100% "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      background: #555;
+    }
+    
+    .auth-box {
+      margin: 2rem auto 0;
+      padding: 1rem;
+      width: 14rem;
+      background: #FAFAFA;
 
-			-webkit-box-shadow: 0 0 1em #000;
-			box-shadow: 0 0 1em #000;
+      -webkit-box-shadow: 0 0 1em #000;
+      box-shadow: 0 0 1em #000;
 
-			-webkit-border-radius: 0.125em;
-			border-radius: 0.125em;
-		}
+      -webkit-border-radius: 0.125em;
+      border-radius: 0.125em;
+    }
 
-		.auth-box h2 {
-			margin: 0;
-			margin-top: -0.25em;
-			padding: 0;
-			padding-bottom: 0.25em;
-		}
+    .auth-box h2 {
+      margin: 0;
+      margin-top: -0.25em;
+      padding: 0;
+      padding-bottom: 0.25em;
+    }
 
-		.errornote {
-			margin: 0;
-			padding: 1em;
-			background: #FAFAFA;
-		}
+    .errornote {
+      margin: 0;
+      padding: 1em;
+      background: #FAFAFA;
+    }
 
-		form .errorlist {
-			margin: 0;
-			padding-left: 1.5em;
-			color: #800;
-			text-shadow: 0 1px 0 #000;
-		}
+    form .errorlist {
+      margin: 0;
+      padding-left: 1.5em;
+      color: #800;
+      text-shadow: 0 1px 0 #000;
+    }
 
-		form label,
-		form input[type="text"],
-		form input[type="password"] {
-			display: block;
-			width: 100%;
-		}
-		form input[type="text"],
-		form input[type="password"] {
-			margin-bottom: 0.5rem;
-			padding: 0.35em;
-			border: 1px solid #888;
+    form label,
+    form input[type="text"],
+    form input[type="password"] {
+      display: block;
+      width: 100%;
+    }
+    form input[type="text"],
+    form input[type="password"] {
+      margin-bottom: 0.5rem;
+      padding: 0.35em;
+      border: 1px solid #888;
 
-			-webkit-border-radius: 0.25em;
-			border-radius: 0.25em;
+      -webkit-border-radius: 0.25em;
+      border-radius: 0.25em;
 
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-		}
-		form input[type="submit"] {
-			padding: 0.25em 0.75em;
-			margin: 0;
-		}
-	</style>
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    form input[type="submit"] {
+      padding: 0.25em 0.75em;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
-	{% if form.errors and not form.non_field_errors %}
-	<p class="errornote">
-		{% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
-	</p>
-	{% endif %}
+  {% if form.errors and not form.non_field_errors %}
+  <p class="errornote">
+    {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+  </p>
+  {% endif %}
 
-	{% if form.non_field_errors %}
-	{% for error in form.non_field_errors %}
-	<p class="errornote">
-		{{ error }}
-	</p>
-	{% endfor %}
-	{% endif %}
+  {% if form.non_field_errors %}
+  {% for error in form.non_field_errors %}
+  <p class="errornote">
+    {{ error }}
+  </p>
+  {% endfor %}
+  {% endif %}
 
-	<article class="auth-box">
-		<form action="{{ app_path }}" method="post" id="login-form">
-			<h2>{% trans "Authorization" %}</h2>
+  <article class="auth-box">
+    <form action="{{ app_path }}" method="post" id="login-form">
+      <h2>{% trans "Authorization" %}</h2>
 
-			{% csrf_token %}
+      {% csrf_token %}
 
-			<label for="id_username">{% trans 'Username:' %}</label>
-			{% if not form.this_is_the_login_form.errors %}
-			{{ form.username.errors }}
-			{% endif %}
-			{{ form.username }}
+      <label for="id_username">{% trans 'Username:' %}</label>
+      {% if not form.this_is_the_login_form.errors %}
+      {{ form.username.errors }}
+      {% endif %}
+      {{ form.username }}
 
-			<label for="id_password">{% trans 'Password:' %}</label>
-			{% if not form.this_is_the_login_form.errors %}
-			{{ form.password.errors }}
-			{% endif %}
-			{{ form.password }}
+      <label for="id_password">{% trans 'Password:' %}</label>
+      {% if not form.this_is_the_login_form.errors %}
+      {{ form.password.errors }}
+      {% endif %}
+      {{ form.password }}
 
-			<input type="hidden" name="this_is_the_login_form" value="1">
-			<input type="hidden" name="next" value="{{ next }}">
+      <input type="hidden" name="this_is_the_login_form" value="1">
+      <input type="hidden" name="next" value="{{ next }}">
 
-			<div style="text-align: right;">
-				<input type="submit" value="{% trans 'Log in' %}">
-			</div>
-		</form>
-	</article>
+      <div style="text-align: right;">
+        <input type="submit" value="{% trans 'Log in' %}">
+      </div>
+    </form>
+  </article>
 
-	<script>
-		function $id(a,b){a=a.match(/^(\W)?(.*)/);return(b||document)["getElement"+(a[1]?a[1]=="#"?"ById":"sByClassName":"sByTagName")](a[2])}
-		var f = $id('#login-form');
-		$id('#id_username').focus();
-	</script>
+  <script>
+    function $id(a,b){a=a.match(/^(\W)?(.*)/);return(b||document)["getElement"+(a[1]?a[1]=="#"?"ById":"sByClassName":"sByTagName")](a[2])}
+    var f = $id('#login-form');
+    $id('#id_username').focus();
+  </script>
 </body>
 </html>
 {% endspaceless %}

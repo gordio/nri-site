@@ -1,6 +1,6 @@
 /*
  * Portfolio styles
- * Author: Gordienko Oleg aka Gordio - me[at]gordio.pp.ua
+ * Author: Gordienko Oleg - gordio.pp.ua
  */
 
 
@@ -33,7 +33,6 @@
 .portfolio-photos .photo img {
 	padding: 0;
 	margin: 0;
-	/*width: 100%;*/
 	max-width: 100%;
 	border: 0;
 
@@ -53,6 +52,7 @@
 	text-transform: capitalize;
 }
 
+
 /* "Mobile" Devices */
 @media screen and (max-width: 33em) {
 	.portfolio-photos {
@@ -69,6 +69,7 @@
 		display: none;
 	}
 }
+
 /* Tablet Devices? */
 @media screen and (min-width: 33em) and (max-width: 48em) {
 	.portfolio-photos {

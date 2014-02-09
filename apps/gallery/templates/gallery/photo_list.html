@@ -5,35 +5,34 @@
 {% block title %}{% trans "Gallery" %} — {{ block.super }}{% endblock title %}
 
 {% block head %}
-	{{ block.super }}
-	{% load compressed %}
-	{% compressed_css 'gallery' %}
-	{# <link href='http://fonts.googleapis.com/css?family=Bad+Script&subset=latin,cyrillic' rel='stylesheet'> #}
+  {{ block.super }}
+  {% load compressed %}
+  {% compressed_css 'gallery' %}
+  {# <link href='http://fonts.googleapis.com/css?family=Bad+Script&subset=latin,cyrillic' rel='stylesheet'> #}
 
-	{% load compressed %}
-	{% compressed_js 'gallery' %}
-	<script>
-		if (!/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent))
-			window.addEventListener('load', function() {
-				Gallery.init('gallery')
-			});
-	</script>
+  {% load compressed %}
+  {% compressed_js 'gallery' %}
+  <script>
+    if (!/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent))
+      window.addEventListener('load', function() {
+        Gallery.init('gallery')
+      });
+  </script>
 {% endblock head %}
 
 {% block content %}
-	<section id="gallery" class="portfolio-photos">
-		{% for p in photos %}
-			<a href="{{ p.get_absolute_url }}" target="_blank">
-				<div class="photo">
-					<img src="{% thumbnail p.image '210x210' crop='smart' %}" alt="{{ p.title }}" title="{{ p.title }}">
-					<h3>{{ p.title }}</h3>
-				</div>
-			</a>
-		{% empty %}
-			<div style="text-align: center">
-				<h2>{% trans "No photos" %}</h2>
-			</div>
-		{% endfor %}
-	</section>
-
+  <section id="gallery" class="portfolio-photos">
+    {% for p in photos %}
+      <a href="{{ p.get_absolute_url }}" target="_blank" title="{{ p.title }}">
+        <div class="photo">
+          <img src="{% thumbnail p.image '210x210' crop='smart' %}" alt="{{ p.title }}" title="{{ p.title }}">
+          <h3>{{ p.title }}</h3>
+        </div>
+      </a>
+    {% empty %}
+      <div style="text-align: center">
+        <h2>{% trans "No photos" %}</h2>
+      </div>
+    {% endfor %}
+  </section>
 {% endblock content %}

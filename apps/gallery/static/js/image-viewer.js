@@ -1,5 +1,10 @@
 "use strict";
 
+/*
+ * Image Viewer
+ * Author: Gordienko Oleg - gordio.pp.ua
+ */
+
 
 function createElementWithClass(el, cl) {
 	var e = document.createElement(el);

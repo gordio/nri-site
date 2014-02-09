@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+
+
+{% block title %}{% trans "Contacts" %} — {{ block.super }}{% endblock title %}
+
+{% block head %}
+  {{ block.super }}
+  {% load compressed %}
+  {% compressed_css 'contacts' %}
+
+  {% load compressed %}
+  {% compressed_js 'contacts' %}
+{% endblock head %}
+
+{% block content %}
+<section class="contacts_data">
+    <div id="hcard" class="vcard">
+      <h1 class="fn n">
+        <span class="additional-name">{% trans "Nedoluga" %}</span>
+        <span class="given-name">{% trans "Roman" %}</span>
+        <span class="family-name">{% trans "Igorevich" %}</span>
+      </h1>
+
+      <div class="adr icon-location">
+        <span class="country-name">{% trans "Ukraine" %}</span>,
+        <span class="locality">{% trans "Kiev" %}</span>
+      </div>
+
+      <ul>
+        <li><a class="email icon-envelop" href="mailto:nri1@mail.ru">nri1@mail.ru</a></li>
+        <li><a class="tel icon-phone" href="tel:0679152240">(067) 915-2240</a></li>
+        <li><a class="tel icon-phone" href="tel:0932201712">(093) 220-1712</a></li>
+        <li><a class="tel icon-phone" href="tel:0679152240">(066) 989-5653</a></li>
+        {# <li><a class="url" href="call:nri">Skype</a></li> #}
+      </ul>
+    </div>
+</section>
+<section class="send_message">
+  <h1>{% trans "Send message" %}</h1>
+  <form action="." method="POST">
+    {% csrf_token %}
+    {{ form }} 
+    <div class="buttons">
+      <input type="button" onclick="location.href='{% url 'gallery' %}'" value="{% trans 'Cancel' %}">
+      <input type="submit" value="{% trans 'Send' %}">
+    </div>
+  </form>
+  <script>document.getElementById('id_email').focus();</script>
+</section>
+{% endblock content %}

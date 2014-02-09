@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'pipeline',
     'easy_thumbnails',
     'gallery',
+    'feedback',
 )
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
@@ -61,6 +62,16 @@ PIPELINE_CSS = {
           'css/image-viewer.css'
         ),
         'output_filename': 'assets/gallery.css',
+        'extra_context': {
+            'media': 'screen,projection',
+        },
+    },
+    'contacts': {
+        'source_filenames': (
+          'css/form.css',
+          'css/contacts.css'
+        ),
+        'output_filename': 'assets/contacts.css',
         'extra_context': {
             'media': 'screen,projection',
         },

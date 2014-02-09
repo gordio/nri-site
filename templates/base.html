@@ -30,6 +30,17 @@
 			<a href="{% url 'contacts' %}">{% trans "Contacts" %}</a>
 		</nav>
 	</header>
+
+	{% if messages %}
+	<section class="messages">
+		{% for message in messages %}
+		<div class="message{% if message.tags %} {{ message.tags }}{% endif %}">
+			{{ message }}
+		</div>
+		{% endfor %}
+	</section>
+	{% endif %}
+
 	<section id="content">
 		{% block content %}
 		{% endblock content %}

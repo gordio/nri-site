@@ -42,11 +42,13 @@ STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 PIPELINE_CSS_COMPRESSOR = 'nri.cssmin.CSSMinCompressor'
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+
 PIPELINE_CSS = {
     'main': {
         'source_filenames': (
           'css/reset.css',
-          'css/layout.css'
+          'css/layout.css',
+          'css/messages.css',
         ),
         'output_filename': 'assets/main.css',
         'extra_context': {
@@ -62,8 +64,9 @@ PIPELINE_CSS = {
         'extra_context': {
             'media': 'screen,projection',
         },
-    }
+    },
 }
+
 PIPELINE_JS = {
     'gallery': {
         'source_filenames': (

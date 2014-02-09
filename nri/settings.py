@@ -37,7 +37,17 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'gallery',
     'feedback',
+    'captcha',
 )
+
+CAPTCHA_FONT_SIZE = 20
+CAPTCHA_LENGTH = 3
+CAPTCHA_LETTER_ROTATION = (-15, 15)
+CAPTCHA_BACKGROUND_COLOR = '#EFEFEF'
+CAPTCHA_FOREGROUND_COLOR = '#111111'
+CAPTCHA_TIMEOUT = 10
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_dots', )
+CAPTCHA_FILTER_FUNCTIONS = None
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 

@@ -6,7 +6,10 @@ from feedback.views import ContactsView
 
 urlpatterns = patterns('',
     url(r'^$', GalleryListView.as_view(), name="gallery"),
+
     url(r'^contacts/$', ContactsView.as_view(), name="contacts"),
+    url(r'^captcha/', include('captcha.urls')),
+
     url(r'^admin/', include(admin.site.urls)),
 )
 

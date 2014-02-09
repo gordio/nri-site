@@ -2,10 +2,12 @@ from django import forms
 from django.conf import settings
 from django.core.mail import send_mail as django_send_mail
 from django.utils.translation import ugettext_lazy as _
+from captcha.fields import CaptchaField
 from .models import Message
 
 
 class ContactsForm(forms.ModelForm):
+    captcha = CaptchaField()
 
     class Meta:
         model = Message

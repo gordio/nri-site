@@ -18,11 +18,6 @@ textarea {
 	outline: 0;
 }
 
-form {
-	display: inline-block;
-	margin-bottom: 1rem;
-}
-
 fieldset {
 	margin-bottom: 1rem;
 	border: 1px solid #AAA;

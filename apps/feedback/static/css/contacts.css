@@ -5,9 +5,7 @@
 }
 
 section.send_message {
-    /*float: left;*/
-    padding: 1rem;
-    width: 55%;
+    padding: 0.5rem;
 }
 section.send_message form {
     width: 100%;
@@ -30,7 +28,7 @@ form img.captcha {
     border: 1px solid #BBB;
     padding-right: 0.25em;
     height: 1.8rem;
-    min-width: 5em;
+    width: 4em;
 
     -webkit-border-radius: 0.125rem;
     border-radius: 0.125rem;
@@ -45,9 +43,7 @@ form #id_captcha_1 {
 
 
 section.contacts_data {
-    float: right;
-    width: 44%;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 div.adr,
@@ -69,4 +65,21 @@ section.contacts_data a:hover,
 section.contacts_data a:focus,
 section.contacts_data a:active {
     border-bottom: 1px dashed #03D;
+}
+
+
+
+@media screen and (min-width: 32em) {
+    section.send_message {
+        float: left;
+        padding: 1rem;
+        width: 59%;
+    }
+
+    section.contacts_data {
+        float: right;
+        padding: 1rem;
+        padding-left: 0;
+        width: 40%;
+    }
 }

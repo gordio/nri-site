@@ -24,11 +24,11 @@ def build():
 
 
 @task
-def run():
+def run(cmd="127.0.0.0:8000"):
     """
     Start project in debug mode (for development).
     """
-    do('venv/bin/python ./manage.py runserver')
+    do('venv/bin/python ./manage.py runserver {0}'.format(cmd))
 
 
 @task

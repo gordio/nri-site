@@ -42,10 +42,10 @@
     {% csrf_token %}
     {{ form }} 
     <div class="buttons">
-      <input type="button" onclick="location.href='{% url 'gallery' %}'" value="{% trans 'Cancel' %}">
+      <input type="button" onclick="history.back()" value="{% trans 'Cancel' %}">
       <input type="submit" value="{% trans 'Send' %}">
     </div>
   </form>
-  <script>document.getElementById('id_email').focus();</script>
+  <script>document.getElementById('id_email').focus()</script>
 </section>
 {% endblock content %}

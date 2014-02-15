@@ -89,10 +89,12 @@ PIPELINE_CSS = {
     },
 }
 
+PIPELINE_DISABLE_WRAPPER = False
 PIPELINE_JS = {
     'gallery': {
         'source_filenames': (
           'js/image-viewer.js',
+          'js/image-viewer-init.js',
         ),
         'output_filename': 'assets/gallery.js',
     }

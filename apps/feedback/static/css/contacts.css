@@ -41,6 +41,13 @@ form #id_captcha_1 {
     margin-left: 0.5em;
 }
 
+/* hack */
+form input[type="submit"] {
+    margin-left: 0.5em;
+    margin-bottom: 0.75em;
+    float: right;
+}
+
 
 section.contacts_data {
     padding: 0.5rem;

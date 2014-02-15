@@ -42,8 +42,8 @@
     {% csrf_token %}
     {{ form }} 
     <div class="buttons">
-      <input type="button" onclick="history.back()" value="{% trans 'Cancel' %}">
       <input type="submit" value="{% trans 'Send' %}">
+      <input type="button" onclick="history.back()" value="{% trans 'Cancel' %}">
     </div>
   </form>
   <script>document.getElementById('id_email').focus()</script>

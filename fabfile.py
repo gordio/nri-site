@@ -24,7 +24,7 @@ def build():
 
 
 @task
-def run(cmd="127.0.0.0:8000"):
+def run(cmd="127.0.0.1:8000"):
     """
     Start project in debug mode (for development).
     """

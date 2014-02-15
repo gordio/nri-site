@@ -21,6 +21,7 @@ def gallery_image_upload_to(instance, filename):
 class Photo(models.Model):
     title = models.CharField(_("Title"), max_length=22)
     image = ThumbnailerImageField(_("Image file"),
+        blank=True,
         upload_to=gallery_image_upload_to,
         resize_source=dict(
             size=(1280, 1024), crop=False, quality=92, sharpen=True

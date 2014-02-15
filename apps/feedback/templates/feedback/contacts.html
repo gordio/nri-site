@@ -28,7 +28,7 @@
       </div>
 
       <ul>
-        <li><a class="email icon-envelop" href="mailto:nri1@mail.ru">nri1@mail.ru</a></li>
+        <li><a class="email icon-email" href="mailto:nri1@mail.ru">nri1@mail.ru</a></li>
         <li><a class="tel icon-phone" href="tel:0679152240">(067) 915-2240</a></li>
         <li><a class="tel icon-phone" href="tel:0932201712">(093) 220-1712</a></li>
         <li><a class="tel icon-phone" href="tel:0679152240">(066) 989-5653</a></li>
@@ -42,8 +42,8 @@
     {% csrf_token %}
     {{ form }} 
     <div class="buttons">
-      <input type="submit" value="{% trans 'Send' %}">
-      <input type="button" onclick="history.back()" value="{% trans 'Cancel' %}">
+      <button class="icon-bubbles send" type="submit">{% trans 'Send' %}</button>
+      <button onclick="history.back()">{% trans 'Cancel' %}</button>
     </div>
   </form>
   <script>document.getElementById('id_email').focus()</script>

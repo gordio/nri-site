@@ -60,6 +60,7 @@ PIPELINE_CSS = {
           'css/reset.css',
           'css/layout.css',
           'css/messages.css',
+          'css/icon-font.css',
         ),
         'output_filename': 'assets/main.css',
         'extra_context': {

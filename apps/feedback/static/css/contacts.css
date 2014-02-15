@@ -42,7 +42,8 @@ form #id_captcha_1 {
 }
 
 /* hack */
-form input[type="submit"] {
+form input[type="submit"],
+form button.send {
     margin-left: 0.5em;
     margin-bottom: 0.75em;
     float: right;

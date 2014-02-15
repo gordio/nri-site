@@ -89,7 +89,7 @@ PIPELINE_CSS = {
     },
 }
 
-PIPELINE_DISABLE_WRAPPER = False
+PIPELINE_DISABLE_WRAPPER = True
 PIPELINE_JS = {
     'gallery': {
         'source_filenames': (

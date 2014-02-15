@@ -4,11 +4,24 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from easy_thumbnails.fields import ThumbnailerImageField
 from easy_thumbnails.files import get_thumbnailer
+import hashlib
+import os
+
+
+def gallery_image_upload_to(instance, filename):
+    path = 'gallery'
+    md5 = hashlib.md5()
+    for chunk in instance.image.chunks():
+        md5.update(chunk)
+    name = md5.hexdigest()
+    tmp, ext = os.path.splitext(filename)
+    return os.path.join('gallery', name + ext)
 
 
 class Photo(models.Model):
     title = models.CharField(_("Title"), max_length=22)
-    image = ThumbnailerImageField(_("Image file"), upload_to="portfolio/",
+    image = ThumbnailerImageField(_("Image file"),
+        upload_to=gallery_image_upload_to,
         resize_source=dict(
             size=(1280, 1024), crop=False, quality=92, sharpen=True
         )

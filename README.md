@@ -1,7 +1,7 @@
-nri-site
+NRI-site
 ========
 
-** Site in development **
+**Site in development**
 NRI Photographer site
 
 
@@ -17,6 +17,6 @@ Usage
 =====
 
 0. Configure `settings_local.py` exmpl: `cp nri/settings_local.py{_example,}`
-1. `fab build` for build site envirenment
-2. `fab run` for run test server or `fab run:0.0.0.0:8080`
+1. `fab build` - build site environment
+2. `fab run` or `fab run:0.0.0.0:8080` - run dev server
 3. `fab manage:shell`, `fab manage:'dbshell -h'`, etc...

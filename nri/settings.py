@@ -159,4 +159,8 @@ STATIC_ROOT = BASE_DIR + '/public/static/'
 STATICFILES_DIRS = (BASE_DIR + '/static/', )
 STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR + '/public/media/'
+
+
 from nri.settings_local import *

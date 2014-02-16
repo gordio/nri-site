@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NRI-RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 10:58+0000\n"
+"POT-Creation-Date: 2014-02-16 02:11+0000\n"
 "PO-Revision-Date: 2014-02-07 18:16+0000\n"
 "Language: Russian\n"
 "MIME-Version: 1.0\n"
@@ -105,11 +105,6 @@ msgstr "Авторизация"
 
 #: templates/admin/login.html:76
 msgid "Please correct the error below."
-msgstr "Пожалуйста исправьте ошибки ниже."
-
-#: templates/admin/login.html:76
-#, fuzzy
-msgid "Please correct the errors below."
 msgstr "Пожалуйста исправьте ошибки ниже."
 
 #: templates/admin/login.html:94

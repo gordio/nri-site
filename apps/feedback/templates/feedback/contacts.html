@@ -43,7 +43,7 @@
     {{ form }} 
     <div class="buttons">
       <button class="icon-bubbles send" type="submit">{% trans 'Send' %}</button>
-      <button onclick="history.back()">{% trans 'Cancel' %}</button>
+      <button onclick="javascript:window.history.back(-1);return false;">{% trans 'Cancel' %}</button>
     </div>
   </form>
   <script>document.getElementById('id_email').focus()</script>

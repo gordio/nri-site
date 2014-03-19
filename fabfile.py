@@ -39,6 +39,11 @@ def manage(cmd):
     return do('venv/bin/python ./manage.py {0}'.format(cmd))
 
 
+@task
+def test(cmd='--noinput'):
+    return manage('test {0}'.format(cmd))
+
+
 def stage(message):
     """
     Show `message` about current stage

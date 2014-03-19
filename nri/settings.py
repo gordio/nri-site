@@ -34,7 +34,7 @@ INSTALLED_APPS = (
     'pipeline',
     'easy_thumbnails',
     'gallery',
-    'feedback',
+    'contacts',
     'captcha',
 )
 

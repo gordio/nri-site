@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from gallery.views import GalleryListView
-from feedback.views import ContactsView
+from contacts.views import ContactsView
 
 
 urlpatterns = patterns('',

@@ -36,9 +36,11 @@ form img.captcha {
 
 form #id_captcha_1 {
     float: left;
-    width: 5em;
+    width: 3em; /* 3 chars */
     height: 1.8rem;
     margin-left: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* hack */

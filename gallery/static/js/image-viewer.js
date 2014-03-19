@@ -95,8 +95,15 @@ var Gallery = new function() {
 
 	this.resize = function(ev) {
 		var padd = self.padding;
-		var iw = self.img.naturalWidth || self.img_s.width
-		var ih = self.img.naturalHeight || self.img_s.height;
+		if (self.img.naturalWidth !== 'undefined' && self.img.naturalHeight !== 'undefined') {
+			var iw = self.img.naturalWidth;
+			var ih = self.img.naturalHeight;
+		} else {
+			// fallback
+			var iw = self.img_s.width;
+			var ih = self.img_s.height;
+		}
+		
 		var w = window.innerWidth - padd, h = window.innerHeight - padd;
 
 		var border = (((iw * h) > (ih * w)) ? 0 : 1);

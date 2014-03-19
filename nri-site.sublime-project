@@ -4,21 +4,12 @@
 		{
 			"file_exclude_patterns":
 			[
-				"*.pyc"
-			],
-			"name": "Apps",
-			"path": "apps"
-		},
-		{
-			"file_exclude_patterns":
-			[
 				"*.pyc",
 				"*.sublime-work*",
 				"*.sqlite3"
 			],
 			"folder_exclude_patterns":
 			[
-				"apps",
 				"venv"
 			],
 			"name": "Project",

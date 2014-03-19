@@ -35,23 +35,31 @@ var Gallery = new function() {
 	}
 
 	this.show = function(img_src, from) {
-		// if (!self.viewer) {
-			// fullpage background
-			self.box_bg = createElementWithClass('div', 'iw-bb');
-			self.box_bg.onclick = self.hide;
+		// fullpage background
+		self.box_bg = createElementWithClass('div', 'iw-bb');
+		self.box_bg.onclick = self.hide;
 
-			// box with image
-			self.viewer = createElementWithClass('div', 'iw-vb');
-			self.box_bg.appendChild(self.viewer);
+		// box with image
+		self.viewer = createElementWithClass('div', 'iw-vb');
+		self.box_bg.appendChild(self.viewer);
 
-			// image
-			self.img = new Image();
-			// important! need for activate resize
-			self.img.src = "";
+		self.img = new Image();
+
+		// compatibility
+		if (self.img.naturalWidth !== 'undefined' && self.img.naturalHeight !== 'undefined') {
+			console.debug("Normal mode");
+			self.img.src = "";  // important! need for activate resize
 			self.img.onload = self.resize;
-			self.img_el = new Image();
-			self.viewer.appendChild(self.img_el);
-		// }
+		} else {
+			console.debug("Fallback mode");
+			// image
+			self.img_s = new Image();
+
+			self.img_s.src = "";  // important! need for activate resize
+			self.img_s.onload = self.resize;	
+		}
+
+		self.viewer.appendChild(self.img);
 
 		// reset position to center
 		self.viewer.style.left = (from) ? from.offsetLeft - window.pageXOffset + "px" : "50%";
@@ -59,7 +67,9 @@ var Gallery = new function() {
 		self.viewer.style.width = (from) ? from.offsetWidth + "px" : 0;
 		self.viewer.style.height = (from) ? from.offsetHeight + "px" : 0;
 
-		self.img_el.src = self.img.src = img_src;
+		self.img.src = img_src;
+		if (self.img.naturalWidth === 'undefined' && self.img.naturalHeight === 'undefined')
+			self.img_s.src = img_src;
 
 		document.body.appendChild(this.box_bg);
 		window.addEventListener('resize', self.resize);
@@ -85,7 +95,8 @@ var Gallery = new function() {
 
 	this.resize = function(ev) {
 		var padd = self.padding;
-		var iw = self.img.width, ih = self.img.height;
+		var iw = self.img.naturalWidth || self.img_s.width
+		var ih = self.img.naturalHeight || self.img_s.height;
 		var w = window.innerWidth - padd, h = window.innerHeight - padd;
 
 		var border = (((iw * h) > (ih * w)) ? 0 : 1);

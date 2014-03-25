@@ -17,10 +17,9 @@
 {% block content %}
   <section id="gallery" class="portfolio-photos">
     {% for p in photos %}
-      <a href="{{ p.get_absolute_url }}" target="_blank" title="{{ p.title }}">
+      <a href="{{ p.get_absolute_url }}" target="_blank">
         <div class="photo">
-          <img src="{{ p.image|thumbnail_url:'gallery_thumb' }}" alt="{{ p.title }}">
-          <h3>{{ p.title }}</h3>
+          <img src="{{ p.image|thumbnail_url:'gallery_thumb' }}" alt="Photo">
         </div>
       </a>
     {% empty %}

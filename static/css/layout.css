@@ -1,8 +1,8 @@
 body {
-	font: 1.00em "Droid Sans", "Tahoma", "Geneva", sans-serif;
-	font-size: 87%;
+/*	font: 1.00em "Droid Sans", "Tahoma", "Geneva", sans-serif;
+	font-size: 87%;*/
 	color: #111;
-	background: #ECEED9;
+	background: #E6E6E6;
 }
 
 
@@ -20,7 +20,9 @@ header .logo {
 }
 
 header nav {
-	float: right;
+	position: absolute;
+	right: 1em;
+	top: 0.75em;
 	margin-right: 0.25rem;
 }
 
